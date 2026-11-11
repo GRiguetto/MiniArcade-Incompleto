@@ -1,0 +1,79 @@
+/* Variaveis */
+:root {
+
+    /* cores modo claro */
+    --bg: #c7d9a0;
+    --panel: #8bac0f;
+    --ink: #0f380f;
+    --accent: #0f380f;
+    --accent2: #306230;
+    --screen: #9bbc0f;
+    --snake: #0f380f;
+    --food: #306230;
+    --muted: #4a6b2a;
+
+    /* fontes */
+    --fonte: "Press Start 2P", "Courier New", monospace;
+
+    color-Scheme: light;
+    box-sizing: border-box;
+    padding-top: env(safe-area-insert-top, 0px);
+    padding-bottom: env(safe-area-insert-bottom, 0px);
+
+
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg: #0b0b1a;
+        --panel: #15153a;
+        --ink: #e8e8ff;
+        --accent: #39ff14;
+        --accent2: #ff2e97;
+        --screen: #050510;
+        --snake: #39ff14;
+        --food: #ff2e97;
+        --muted: #8888bb;
+        color-scheme: dark; 
+    }
+}
+
+/* Base */
+html {
+    scroll-padding-top: env(safe-area-insert-top, 0px);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg); 
+    color:var(--ink);
+    font-family: var(--fonte); 
+    font-size: 12px; 
+    line-height: 1.6;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+}
+
+/* efeito do CTR de monitores antigos */
+body::after {
+    content: ""; 
+    position:fixed; 
+    inset:0; 
+    pointer-events: none;
+    z-index: 10;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 1px, transparent 1px 3px);
+}
+
+button {
+    font-family: inherit;
+}
+
+[hidden]{
+    display: none !important;
+}
